@@ -61,8 +61,8 @@ function Invitation() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
                   Reserve a data
                 </span>
-                <time className="font-display text-3xl sm:text-4xl font-bold text-white">
-                  06 / 06 / 2026
+                <time className="font-display text-2xl sm:text-3xl font-bold text-white">
+                  06 / 06 / 2026 às 12:30
                 </time>
                 <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
                   SÁBADO
@@ -72,6 +72,24 @@ function Invitation() {
           </div>
         </div>
       </section>
+
+      {/* MENSAGEM */}
+      <section className="px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-2xl text-center animate-fade-up">
+          <div className="mb-4 inline-block animate-float-fast text-5xl">💙</div>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-6">
+            Uma mensagem especial
+          </h2>
+          <p className="text-lg sm:text-xl leading-relaxed text-foreground/80">
+            Você está convidado(a) para celebrar esse momento especial com a gente!
+            Venha comemorar a chegada do{" "}
+            <span className="font-semibold text-primary">Henrique</span> e os aniversários
+            da <span className="font-semibold text-coral">Vanessa</span> e da{" "}
+            <span className="font-semibold text-coral">Bebel 🐶</span> em um dia cheio de amor
+            e alegria. 💙
+          </p>
+        </div>
+      </section> 
 
        {/* RSVP */}
       <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
@@ -95,24 +113,6 @@ function Invitation() {
              <Countdown targetDate="2026-06-06T00:00:00"/>
          </div>
       </section>  
-
-      {/* MENSAGEM */}
-      <section className="px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center animate-fade-up">
-          <div className="mb-4 inline-block animate-float-fast text-5xl">💙</div>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-6">
-            Uma mensagem especial
-          </h2>
-          <p className="text-lg sm:text-xl leading-relaxed text-foreground/80">
-            Você está convidado(a) para celebrar esse momento especial com a gente!
-            Venha comemorar a chegada do{" "}
-            <span className="font-semibold text-primary">Henrique</span> e os aniversários
-            da <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-            <span className="font-semibold text-coral">Bebel 🐶</span> em um dia cheio de amor
-            e alegria. 💙
-          </p>
-        </div>
-      </section> 
 
       {/* FOOTER */}
       <footer className="bg-gradient-ocean px-4 py-10 text-center">

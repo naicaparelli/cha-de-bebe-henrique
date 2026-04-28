@@ -73,6 +73,29 @@ function Invitation() {
         </div>
       </section>
 
+       {/* RSVP */}
+      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
+        <div className="mx-auto max-w-xl">
+          <div className="text-center mb-8 animate-fade-up">
+            <span className="inline-block text-4xl mb-3 animate-sway">🌊</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-2">
+              Confirme sua presença
+            </h2>
+            <p className="text-muted-foreground">
+              Sua confirmação ajuda o papai e mamãe a organizarem tudo com carinho ✨
+            </p>
+          </div>
+          <RsvpForm /> 
+        </div>
+      </section>
+
+            {/* CONTAGEM REGRESSIVA */}
+      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
+          <div className="mx-auto max-w-xl">
+             <Countdown targetDate="2026-06-06T00:00:00"/>
+         </div>
+      </section>  
+
       {/* MENSAGEM */}
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-2xl text-center animate-fade-up">
@@ -89,30 +112,7 @@ function Invitation() {
             e alegria. 💙
           </p>
         </div>
-      </section>
-
-      {/* CONTAGEM REGRESSIVA */}
-      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
-          <div className="mx-auto max-w-xl">
-             <Countdown targetDate="2026-06-06T00:00:00"/>
-         </div>
-      </section>   
-
-      {/* RSVP */}
-      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
-        <div className="mx-auto max-w-xl">
-          <div className="text-center mb-8 animate-fade-up">
-            <span className="inline-block text-4xl mb-3 animate-sway">🌊</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-2">
-              Confirme sua presença
-            </h2>
-            <p className="text-muted-foreground">
-              Sua confirmação ajuda o papai e mamãe a organizarem tudo com carinho ✨
-            </p>
-          </div>
-          <RsvpForm /> 
-        </div>
-      </section>
+      </section> 
 
       {/* FOOTER */}
       <footer className="bg-gradient-ocean px-4 py-10 text-center">

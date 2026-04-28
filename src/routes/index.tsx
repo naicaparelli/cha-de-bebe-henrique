@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Você está convidado(a) para o chá de bebê do Henrique e os aniversários da Vanessa e da Bebel. Confirme sua presença!",
+          "Você está convidado(a) para o chá de bebê do Henrique e os aniversários da mamãe Vanessa e da doguinha Bebel 🐶. Confirme sua presença!",
       },
       { property: "og:title", content: "Chá de Bebê do Henrique 🐳" },
       {
@@ -54,7 +54,7 @@ function Invitation() {
               <p className="mt-4 text-base sm:text-lg text-foreground/80">
                 E comemoração do aniversário da{" "}
                 <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-                <span className="font-semibold text-coral">Bebel</span> 🎉
+                <span className="font-semibold text-coral">Bebel 🐶</span> 🎉
               </p>
 
               <div className="mt-6 inline-flex flex-col items-center gap-1 rounded-2xl bg-gradient-ocean px-6 py-4 shadow-bubble">
@@ -85,7 +85,7 @@ function Invitation() {
             Venha comemorar a chegada do{" "}
             <span className="font-semibold text-primary">Henrique</span> e os aniversários
             da <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-            <span className="font-semibold text-coral">Bebel</span> em um dia cheio de amor
+            <span className="font-semibold text-coral">Bebel 🐶</span> em um dia cheio de amor
             e alegria. 💙
           </p>
         </div>
@@ -107,7 +107,7 @@ function Invitation() {
               Confirme sua presença
             </h2>
             <p className="text-muted-foreground">
-              Sua confirmação ajuda a Vanessa a organizar tudo com carinho ✨
+              Sua confirmação ajuda o papai e mamãe a organizarem tudo com carinho ✨
             </p>
           </div>
           <RsvpForm /> 
@@ -116,7 +116,7 @@ function Invitation() {
 
       {/* FOOTER */}
       <footer className="bg-gradient-ocean px-4 py-10 text-center">
-        <p className="font-display text-xl text-white">Henrique • Vanessa • Bebel</p>
+        <p className="font-display text-xl text-white">Henrique • Vanessa • 🐶 Bebel</p>
         <p className="mt-2 text-sm text-white/80">Com amor, esperamos por você 💙🐳</p>
       </footer>
     </main>

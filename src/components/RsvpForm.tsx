@@ -131,7 +131,7 @@ export function RsvpForm() {
     >
       <div>
         <label htmlFor="nome" className="block text-sm font-semibold text-ocean-deep mb-2">
-          Nome completo
+          Nome e Sobrenome
         </label>
         <input
           id="nome"

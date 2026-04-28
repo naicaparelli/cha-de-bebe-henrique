@@ -54,7 +54,7 @@ function Invitation() {
               <p className="mt-4 text-base sm:text-lg text-foreground/80">
                 E comemoração do aniversário da{" "}
                 <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-                <span className="font-semibold text-coral">Bebel 🐶</span> 🎉
+                <span className="font-semibold text-coral">🐶 Bebel</span> 🎉
               </p>
 
               <div className="mt-6 inline-flex flex-col items-center gap-1 rounded-2xl bg-gradient-ocean px-6 py-4 shadow-bubble">
@@ -80,16 +80,25 @@ function Invitation() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-6">
             Uma mensagem especial
           </h2>
+          <p className="text-lg sm:text-xl leading-relaxed text-foreground/80">"Há momentos que pedem para serem vividos juntos —
+            em águas calmas, entre bolhinhas, e com o coração transbordando."</p><br/>
           <p className="text-lg sm:text-xl leading-relaxed text-foreground/80">
             Você está convidado(a) para celebrar esse momento especial com a gente!
             Venha comemorar a chegada do{" "}
             <span className="font-semibold text-primary">Henrique</span> e os aniversários
             da <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-            <span className="font-semibold text-coral">Bebel 🐶</span> em um dia cheio de amor
+            <span className="font-semibold text-coral">🐶 Bebel</span> em um dia cheio de amor
             e alegria. 💙
           </p>
         </div>
       </section> 
+
+       {/* CONTAGEM REGRESSIVA */}
+      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
+          <div className="mx-auto max-w-xl">
+             <Countdown targetDate="2026-06-06T00:00:00"/>
+         </div>
+      </section>  
 
        {/* RSVP */}
       <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
@@ -106,13 +115,6 @@ function Invitation() {
           <RsvpForm /> 
         </div>
       </section>
-
-            {/* CONTAGEM REGRESSIVA */}
-      <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
-          <div className="mx-auto max-w-xl">
-             <Countdown targetDate="2026-06-06T00:00:00"/>
-         </div>
-      </section>  
 
       {/* FOOTER */}
       <footer className="bg-gradient-ocean px-4 py-10 text-center">

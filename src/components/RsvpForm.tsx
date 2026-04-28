@@ -35,23 +35,27 @@ export function RsvpForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  useEffect(() => {
-    async function loadGifts() {
-      try {
-        const response = await fetch(SCRIPT_URL);
-        const data = await response.json();
+  async function loadGifts() {
+    try {
+      const response = await fetch(`${SCRIPT_URL}?t=${Date.now()}`, {
+        method: "GET",
+        cache: "no-store",
+      });
 
-        setEstoque({
-          RN: Number(data.RN || 0),
-          P: Number(data.P || 0),
-          M: Number(data.M || 0),
-          G: Number(data.G || 0),
-        });
-      } catch (error) {
-        console.error("Erro ao carregar presentes:", error);
-      }
+      const data = await response.json();
+
+      setEstoque({
+        RN: Number(data.RN || 0),
+        P: Number(data.P || 0),
+        M: Number(data.M || 0),
+        G: Number(data.G || 0),
+      });
+    } catch (error) {
+      console.error("Erro ao carregar presentes:", error);
     }
+  }
 
+  useEffect(() => {
     loadGifts();
   }, []);
 
@@ -74,6 +78,13 @@ export function RsvpForm() {
           presente,
         }),
       });
+
+      if (presente) {
+        setEstoque((prev) => ({
+          ...prev,
+          [presente]: prev[presente] + 1,
+        }));
+      }
 
       setStatus("success");
       setNome("");
@@ -101,7 +112,10 @@ export function RsvpForm() {
         </p>
 
         <button
-          onClick={() => setStatus("idle")}
+          onClick={() => {
+            setStatus("idle");
+            loadGifts();
+          }}
           className="mt-6 text-sm font-semibold text-primary hover:underline"
         >
           Confirmar mais alguém
@@ -201,9 +215,7 @@ export function RsvpForm() {
                     className="h-4 w-4 accent-primary"
                   />
 
-                  <span className="font-semibold text-ocean-deep">
-                    {gift.label}
-                  </span>
+                  <span className="font-semibold text-ocean-deep">{gift.label}</span>
                 </div>
 
                 <span className="text-xs font-semibold text-muted-foreground">

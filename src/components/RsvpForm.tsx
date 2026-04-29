@@ -105,10 +105,11 @@ export function RsvpForm() {
 
         <h3 className="font-display text-2xl sm:text-3xl text-ocean-deep mb-2">
           Presença confirmada!
+          Você receberá um e-mail com a confirmação e o endereço!
         </h3>
 
         <p className="text-muted-foreground">
-          Mal podemos esperar para te ver no dia 06/06/2026 🐳
+          Mal podemos esperar para te ver no dia 06/06/2026 às 12:30 🐳
         </p>
 
         <button
@@ -183,10 +184,10 @@ export function RsvpForm() {
 
       <div className="rounded-3xl bg-foam/80 border-2 border-border p-5">
         <p className="font-display text-lg font-semibold text-ocean-deep mb-1">
-          Sugestão de presente
+          Sugestão de presente Opcional
         </p>
         <p className="text-sm text-muted-foreground mb-4">
-          Opcional — escolha uma opção disponível 💙
+          Fraldas Pampers ou Huguies — escolha um tamanho disponível 💙
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2">

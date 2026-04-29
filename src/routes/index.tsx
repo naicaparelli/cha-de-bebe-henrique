@@ -106,7 +106,7 @@ function Invitation() {
           <div className="text-center mb-8 animate-fade-up">
             <span className="inline-block text-4xl mb-3 animate-sway">🌊</span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-2">
-              Confirme sua presença
+              Confirme sua presença até 17 de maio!
             </h2>
             <p className="text-muted-foreground">
               Sua confirmação ajuda o papai e mamãe a organizarem tudo com carinho ✨

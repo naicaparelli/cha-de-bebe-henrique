@@ -21,6 +21,8 @@ const giftOptions: { value: GiftSize; label: string }[] = [
 ];
 
 export function RsvpForm() {
+  const [nome, setNome] = useState("");
+  const [telefone, setTelefone] = useState("");
   const [quantidade, setQuantidade] = useState<number | "">("");
   const [presente, setPresente] = useState<GiftSize | "">("");
 
@@ -61,7 +63,7 @@ export function RsvpForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    if (!quantidade || Number(quantidade) < 1) return;
+    if (!nome.trim() || !telefone.trim() || !quantidade || Number(quantidade) < 1) return;
 
     setStatus("loading");
     setErrorMsg("");
@@ -72,6 +74,8 @@ export function RsvpForm() {
         mode: "no-cors",
         body: JSON.stringify({
           eventDate: EVENT_DATE,
+          nome: nome.trim(),
+          telefone: telefone.trim(),
           quantidade: Number(quantidade),
           presente,
         }),
@@ -85,6 +89,8 @@ export function RsvpForm() {
       }
 
       setStatus("success");
+      setNome("");
+      setTelefone("");
       setQuantidade("");
       setPresente("");
     } catch (err) {
@@ -125,6 +131,38 @@ export function RsvpForm() {
       onSubmit={handleSubmit}
       className="rounded-3xl bg-white p-6 sm:p-8 shadow-soft space-y-5"
     >
+      <div>
+        <label htmlFor="nome" className="block text-sm font-semibold text-ocean-deep mb-2">
+          Nome
+        </label>
+        <input
+          id="nome"
+          type="text"
+          required
+          maxLength={120}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          placeholder="Seu nome"
+          className="w-full rounded-2xl border-2 border-border bg-foam px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/15"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="telefone" className="block text-sm font-semibold text-ocean-deep mb-2">
+          Telefone
+        </label>
+        <input
+          id="telefone"
+          type="tel"
+          required
+          maxLength={20}
+          value={telefone}
+          onChange={(e) => setTelefone(e.target.value)}
+          placeholder="(00) 00000-0000"
+          className="w-full rounded-2xl border-2 border-border bg-foam px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/15"
+        />
+      </div>
+
       <div>
         <label htmlFor="quantidade" className="block text-sm font-semibold text-ocean-deep mb-2">
           Quantidade de pessoas{" "}

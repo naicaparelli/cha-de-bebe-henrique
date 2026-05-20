@@ -52,7 +52,7 @@ function Invitation() {
                 <span className="inline-block">Henrique 🐳</span>
               </h1>
               <div className="mt-6 inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-ocean px-6 py-5 shadow-bubble">
-                <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
+                <span className="text-base font-semibold uppercase tracking-widest text-white/80">
                   Hora: 18h30
                 </span>
                 <time className="font-display text-2xl sm:text-3xl font-bold text-white">
@@ -101,7 +101,7 @@ function Invitation() {
           <div className="text-center mb-8 animate-fade-up">
             <span className="inline-block text-4xl mb-3 animate-sway">🌊</span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-ocean-deep mb-2">
-              Confirme sua presença até 17 de maio!
+              Confirme sua presença até 14 de junho!
             </h2>
             <p className="text-muted-foreground">
               Sua confirmação ajuda o papai e mamãe a organizarem tudo com carinho ✨

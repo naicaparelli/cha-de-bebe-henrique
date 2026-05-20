@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycby7CQg3RaMUc_CIW48-bGXIkN5WXGLQvhugRvFk23aBa7qqwAYckxizc-EdX_vWV6Z0/exec";
+const EVENT_DATE = "2026-06-27";
 
 type GiftSize = "RN" | "P" | "M" | "G";
 
@@ -20,8 +21,6 @@ const giftOptions: { value: GiftSize; label: string }[] = [
 ];
 
 export function RsvpForm() {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
   const [quantidade, setQuantidade] = useState<number | "">("");
   const [presente, setPresente] = useState<GiftSize | "">("");
 
@@ -37,7 +36,7 @@ export function RsvpForm() {
 
   async function loadGifts() {
     try {
-      const response = await fetch(`${SCRIPT_URL}?t=${Date.now()}`, {
+      const response = await fetch(`${SCRIPT_URL}?eventDate=${EVENT_DATE}&t=${Date.now()}`, {
         method: "GET",
         cache: "no-store",
       });
@@ -62,7 +61,7 @@ export function RsvpForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    if (!nome.trim() || !email.trim() || !quantidade || Number(quantidade) < 1) return;
+    if (!quantidade || Number(quantidade) < 1) return;
 
     setStatus("loading");
     setErrorMsg("");
@@ -72,8 +71,7 @@ export function RsvpForm() {
         method: "POST",
         mode: "no-cors",
         body: JSON.stringify({
-          nome: nome.trim(),
-          email: email.trim(),
+          eventDate: EVENT_DATE,
           quantidade: Number(quantidade),
           presente,
         }),
@@ -87,8 +85,6 @@ export function RsvpForm() {
       }
 
       setStatus("success");
-      setNome("");
-      setEmail("");
       setQuantidade("");
       setPresente("");
     } catch (err) {
@@ -105,11 +101,10 @@ export function RsvpForm() {
 
         <h3 className="font-display text-2xl sm:text-3xl text-ocean-deep mb-2">
           Presença confirmada!
-          Você receberá um e-mail com a confirmação e o endereço!
         </h3>
 
         <p className="text-muted-foreground">
-          Mal podemos esperar para te ver no dia 06/06/2026 às 12:30 🐳
+          Mal podemos esperar para te ver no dia 27/06/2026 às 18h30 🐳
         </p>
 
         <button
@@ -130,38 +125,6 @@ export function RsvpForm() {
       onSubmit={handleSubmit}
       className="rounded-3xl bg-white p-6 sm:p-8 shadow-soft space-y-5"
     >
-      <div>
-        <label htmlFor="nome" className="block text-sm font-semibold text-ocean-deep mb-2">
-          Nome e Sobrenome
-        </label>
-        <input
-          id="nome"
-          type="text"
-          required
-          maxLength={120}
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          placeholder="Como podemos te chamar?"
-          className="w-full rounded-2xl border-2 border-border bg-foam px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/15"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-ocean-deep mb-2">
-          E-mail
-        </label>
-        <input
-          id="email"
-          type="email"
-          required
-          maxLength={160}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="seuemail@exemplo.com"
-          className="w-full rounded-2xl border-2 border-border bg-foam px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/15"
-        />
-      </div>
-
       <div>
         <label htmlFor="quantidade" className="block text-sm font-semibold text-ocean-deep mb-2">
           Quantidade de pessoas{" "}

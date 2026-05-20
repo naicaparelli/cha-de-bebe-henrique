@@ -7,16 +7,16 @@ import { Countdown } from "@/components/Countdown";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Chá de Bebê do Henrique 🐳 — 06/06/2026" },
+      { title: "Chá de Bebê do Henrique 🐳 — 27/06/2026" },
       {
         name: "description",
         content:
-          "Você está convidado(a) para o chá de bebê do Henrique e os aniversários da mamãe Vanessa e da doguinha Bebel 🐶. Confirme sua presença!",
+          "Você está convidado(a) para o chá de bebê do Henrique. Confirme sua presença!",
       },
       { property: "og:title", content: "Chá de Bebê do Henrique 🐳" },
       {
         property: "og:description",
-        content: "06/06/2026 — Venha celebrar com a gente! 💙",
+        content: "27/06/2026 — Venha celebrar com a gente! 💙",
       },
       { property: "og:image", content: heroImage },
       { name: "twitter:image", content: heroImage },
@@ -51,22 +51,19 @@ function Invitation() {
                 Chá de Bebê do <br className="sm:hidden" />
                 <span className="inline-block">Henrique 🐳</span>
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-foreground/80">
-                E comemoração do aniversário da{" "}
-                <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-                <span className="font-semibold text-coral">🐶 Bebel</span> 🎉
-              </p>
-
-              <div className="mt-6 inline-flex flex-col items-center gap-1 rounded-2xl bg-gradient-ocean px-6 py-4 shadow-bubble">
+              <div className="mt-6 inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-ocean px-6 py-5 shadow-bubble">
                 <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
-                  Reserve a data
+                  Hora: 18h30
                 </span>
                 <time className="font-display text-2xl sm:text-3xl font-bold text-white">
-                  06 / 06 / 2026 às 12:30
+                  27 / 06 / 2026
                 </time>
-                <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
-                  SÁBADO
-                </span>
+                <div className="mt-1 max-w-xs text-sm font-semibold leading-relaxed text-white/90 sm:text-base">
+                  <p>LOCAL: CASA DE FESTA DO DEVAIR</p>
+                  <p className="font-normal">
+                    Avenida 15 com a Rua 16, atrás da Peixaria do Devair
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -85,10 +82,8 @@ function Invitation() {
           <p className="text-lg sm:text-xl leading-relaxed text-foreground/80">
             Você está convidado(a) para celebrar esse momento especial com a gente!
             Venha comemorar a chegada do{" "}
-            <span className="font-semibold text-primary">Henrique</span> e os aniversários
-            da <span className="font-semibold text-coral">Vanessa</span> e da{" "}
-            <span className="font-semibold text-coral">🐶 Bebel</span> em um dia cheio de amor
-            e alegria. 💙
+            <span className="font-semibold text-primary">Henrique</span> em um dia cheio
+            de amor e alegria. 💙
           </p>
         </div>
       </section> 
@@ -96,7 +91,7 @@ function Invitation() {
        {/* CONTAGEM REGRESSIVA */}
       <section className="relative overflow-hidden px-4 pb-20 sm:pb-28">
           <div className="mx-auto max-w-xl">
-             <Countdown targetDate="2026-06-06T00:00:00"/>
+             <Countdown targetDate="2026-06-27T18:30:00"/>
          </div>
       </section>  
 
@@ -118,7 +113,7 @@ function Invitation() {
 
       {/* FOOTER */}
       <footer className="bg-gradient-ocean px-4 py-10 text-center">
-        <p className="font-display text-xl text-white">Henrique • Vanessa • 🐶 Bebel</p>
+        <p className="font-display text-xl text-white">Henrique</p>
         <p className="mt-2 text-sm text-white/80">Com amor, esperamos por você 💙🐳</p>
       </footer>
     </main>

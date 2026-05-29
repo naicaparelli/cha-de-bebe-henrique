@@ -7,10 +7,10 @@ const EVENT_DATE = "2026-06-27";
 type GiftSize = "RN" | "P" | "M" | "G";
 
 const giftLimits: Record<GiftSize, number> = {
-  RN: 7,
-  P: 10,
-  M: 10,
-  G: 10,
+  RN: 10,
+  P: 12,
+  M: 15,
+  G: 15,
 };
 
 const giftOptions: { value: GiftSize; label: string }[] = [
@@ -74,10 +74,13 @@ export function RsvpForm() {
         mode: "no-cors",
         body: JSON.stringify({
           eventDate: EVENT_DATE,
+          sheetName: "Festa 27",
           nome: nome.trim(),
           telefone: telefone.trim(),
           quantidade: Number(quantidade),
           presente,
+          fralda: presente,
+          tamanhoFralda: presente,
         }),
       });
 
